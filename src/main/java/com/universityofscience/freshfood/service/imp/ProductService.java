@@ -1,5 +1,7 @@
 package com.universityofscience.freshfood.service.imp;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -37,7 +39,7 @@ public ProductDTO save(ProductDTO productDTO) {
 	productNewID=productConvert.toEntity(productDTO);
 	}
 	Categories categories= categoryStoreRepositery.findOneBycategoryName(productDTO.getProductTypeName());
-	Store store=storeRespository.findOneById(productDTO.getStoreId());
+	Store store=storeRespository.findOneBystoreName(productDTO.getStoreName());
 	productNewID.setCategories(categories);
 	productNewID.setStore(store);
 	productNewID= productRepository.save(productNewID);
@@ -50,6 +52,12 @@ public void delete(long[] ids) {
 	for (long i : ids) {
 		productRepository.deleteById(i);
 	}
+}
+
+@Override
+public List<Product> findAll() {
+	
+	return productRepository.findAll();
 }
 
 }

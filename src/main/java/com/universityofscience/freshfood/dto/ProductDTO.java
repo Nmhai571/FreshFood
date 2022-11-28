@@ -7,7 +7,13 @@ private String importDate;
 private String expiryDate;
 private String price;
 private long amount;
-private long storeId;
+private String storeName;
+public String getStoreName() {
+	return storeName;
+}
+public void setStoreName(String storeName) {
+	this.storeName = storeName;
+}
 private  String productTypeName;
 
 public String getProductName() {
@@ -52,12 +58,7 @@ public long getAmount() {
 public void setAmount(long amount) {
 	this.amount = amount;
 }
-public long getStoreId() {
-	return storeId;
-}
-public void setStoreId(long storeId) {
-	this.storeId = storeId;
-}
+
 public Long getProductId() {
 	return productId;
 }

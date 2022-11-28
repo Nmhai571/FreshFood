@@ -21,6 +21,7 @@ public class ProductConvert {
 	public ProductDTO toDTO(Product product)
 	{
 		ProductDTO productDTO=new ProductDTO();
+		
 		productDTO.setProductName(product.getProductName());
 		productDTO.setAmount(product.getAmount());
 		productDTO.setImportDate(product.getDayIn());
@@ -31,12 +32,14 @@ public class ProductConvert {
 	}
 	public Product toEntity(ProductDTO dto,Product product)
 	{
+		
 		product.setId(dto.getProductId());
 		product.setDayIn(dto.getImportDate());
 		product.setExpiryDay(dto.getExpiryDate());
 		product.setPrice(dto.getPrice());
 		product.setProductName(dto.getProductName());
 		product.setAmount(dto.getAmount());
+		product.setProductName(dto.getStoreName());
 		return product;
 	}
 }
