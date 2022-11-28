@@ -25,8 +25,6 @@ public void setProductName(String productName) {
 public void setProductId(Long productId) {
 	this.productId = productId;
 }
-
-
 public String getImportDate() {
 	return importDate;
 }

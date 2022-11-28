@@ -21,4 +21,30 @@ public class Categories {
 	
 	@OneToMany(mappedBy = "categories")
 	private Set<Product> lisProducts;
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getCategoryName() {
+		return categoryName;
+	}
+
+	public void setCategoryName(String categoryName) {
+		this.categoryName = categoryName;
+	}
+
+	public Set<Product> getLisProducts() {
+		return lisProducts;
+	}
+
+	public void setLisProducts(Set<Product> lisProducts) {
+		this.lisProducts = lisProducts;
+	}
+	
+	
 }

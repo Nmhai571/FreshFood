@@ -24,8 +24,6 @@ public class Store {
 	@Column(name = "tencuahang")
 	private String storeName;
 	
-	@Column(name = "doanhthu")
-	private String revenue;
 	
 //	@Column(name = "maloaicuahang")
 //	private long idStoreCategory;

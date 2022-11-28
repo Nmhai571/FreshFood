@@ -3,31 +3,34 @@ use freshfood;
 create table  sanpham (
 masanpham bigint  not null primary key auto_increment ,
 tensanpham nvarchar(200),
-ngaynhaphang timestamp not null,
-hansudung timestamp not null,
-giatien bigint not null,
-maloaisanpham bigint not null,
-soluong bigint not null,
-macuahang bigint not null
+ngaynhaphang datetime default now(),
+hansudung datetime default now(),
+giatien bigint,
+maloaisanpham bigint,
+soluong bigint,
+macuahang bigint
 );
 create table loaisanpham(
-tenloaisanpham nvarchar(255) not null,
-maloaisanpham bigint auto_increment Not null primary key
+maloaisanpham bigint auto_increment Not null primary key,
+tenloaisanpham nvarchar(255) not null
 );
+
+insert into loaisanpham(tenloaisanpham) values ("Thực Phẩm Tươi Sống");
 
 create table cuahang(
 macuahang bigint not null  primary key auto_increment,
 diachi nvarchar(255) not null,
 tencuahang nvarchar(255) not null,
-doanhthu varchar(250) not null,
 maloaicuahang int
 );
+insert into cuahang (diachi, tencuahang, maloaicuahang) values ("ly thuong kiet", "Freshfood1", 1);
 
 create table loaicuahang(
 maloaicuahang int auto_increment,
 tenloaicuahang nvarchar(200),
 primary key(maloaicuahang)
 );
+insert into loaicuahang(tenloaicuahang) values ("chi nhanh 1");
 
 create table nhanvien(
 manhanvien  bigint auto_increment not null primary key,
@@ -48,6 +51,9 @@ create table trangthailamviec(
     primary key(matrangthai)
 );
 
+insert into trangthailamviec(tentrangthai) values ("Đang Làm Việc");
+insert into trangthailamviec(tentrangthai) values ("Đã Nghỉ");
+
 create table  chucvu
 (
 machucvu bigint not null primary key auto_increment,
@@ -57,14 +63,18 @@ tenchucvu nvarchar(255) not null
 create table hoadon(
 mahoadon bigint auto_increment not null primary key ,
 ngayxuat timestamp not null,
+tongsotien nvarchar(255),
 makhachhang bigint not null,
 matrangthai bigint not null,
 manhanvien bigint not null
 );
+
 create table tinhtrangthanhtoan(
 matrangthai bigint not null primary key auto_increment,
 trangthai nvarchar(255) not null
 );
+insert into tinhtrangthanhtoan(trangthai) values("Đã Thanh Toán");
+insert into tinhtrangthanhtoan(trangthai) values("Chưa Thanh Toán");
 
 create table chitiethoadon(
 machitiethoadon bigint auto_increment,
