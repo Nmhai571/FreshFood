@@ -47,4 +47,78 @@ public class Product {
 	
 	@OneToMany(mappedBy = "product")
 	private Set<BillDetail> lisBillDetails;
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getProductName() {
+		return productName;
+	}
+
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
+
+	public String getDayIn() {
+		return dayIn;
+	}
+
+	public void setDayIn(String dayIn) {
+		this.dayIn = dayIn;
+	}
+
+	public String getExpiryDay() {
+		return expiryDay;
+	}
+
+	public void setExpiryDay(String expiryDay) {
+		this.expiryDay = expiryDay;
+	}
+
+	public String getPrice() {
+		return price;
+	}
+
+	public void setPrice(String price) {
+		this.price = price;
+	}
+
+	public Categories getCategories() {
+		return categories;
+	}
+
+	public void setCategories(Categories categories) {
+		this.categories = categories;
+	}
+
+	public long getAmount() {
+		return amount;
+	}
+
+	public void setAmount(long amount) {
+		this.amount = amount;
+	}
+
+	public Store getStore() {
+		return store;
+	}
+
+	public void setStore(Store store) {
+		this.store = store;
+	}
+
+	public Set<BillDetail> getLisBillDetails() {
+		return lisBillDetails;
+	}
+
+	public void setLisBillDetails(Set<BillDetail> lisBillDetails) {
+		this.lisBillDetails = lisBillDetails;
+	}
+	
+	
 }
