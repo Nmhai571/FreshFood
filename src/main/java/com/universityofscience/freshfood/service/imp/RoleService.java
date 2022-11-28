@@ -1,5 +1,7 @@
 package com.universityofscience.freshfood.service.imp;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,6 +23,11 @@ public class RoleService implements IRoleService{
 	public void deleteRole(Long id) {
 		roleRepository.deleteById(id);
 		
+	}
+
+	@Override
+	public List<Role> getAllRole() {
+		return roleRepository.findAll();
 	}
 	
 
