@@ -6,4 +6,5 @@ import com.universityofscience.freshfood.entity.Categories;
 
 public interface CategoryStoreRepositery extends JpaRepository<Categories, Long>{
 	Categories findOneBycategoryName(String tenloaisanpham);
+
 }

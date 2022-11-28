@@ -13,7 +13,8 @@ import javax.persistence.OneToMany;
 public class Customer {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	@Column(name = "makhachhang")
+	private Long customerId;
 	
 	@Column(name = "tenkhachhang")
 	private String customerName;
@@ -22,8 +23,45 @@ public class Customer {
 	private String address;
 	
 	@Column(name = "sodienthoai")
-	private long phoneNumber;
+	private Long phoneNumber;
 	
+	public Long getId() {
+		return customerId;
+	}
+
+
+	public String getCustomerName() {
+		return customerName;
+	}
+
+	public void setCustomerName(String customerName) {
+		this.customerName = customerName;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public Long getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(Long phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+	public Set<Bill> getLisBills() {
+		return lisBills;
+	}
+
+	public void setLisBills(Set<Bill> lisBills) {
+		this.lisBills = lisBills;
+	}
+
 	@OneToMany(mappedBy = "customer")
 	private Set<Bill> lisBills;
 }

@@ -39,7 +39,6 @@ public class ProductConvert {
 		product.setPrice(dto.getPrice());
 		product.setProductName(dto.getProductName());
 		product.setAmount(dto.getAmount());
-		product.setProductName(dto.getStoreName());
 		return product;
 	}
 }
