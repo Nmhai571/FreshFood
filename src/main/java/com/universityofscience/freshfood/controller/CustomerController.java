@@ -16,7 +16,7 @@ import com.universityofscience.freshfood.service.imp.CustomerService;
 public class CustomerController {
 @Autowired
 private CustomerService customerService;
-@PostMapping("/createCustomer")
+@PostMapping("/createcustomer")
 public CustomerDTO save(@RequestBody CustomerDTO customerDTO)
 {
 	return customerService.addCustomer(customerDTO);

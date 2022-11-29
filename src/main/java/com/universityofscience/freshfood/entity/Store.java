@@ -25,12 +25,6 @@ public class Store {
 	private String storeName;
 	
 	
-//	@Column(name = "maloaicuahang")
-//	private long idStoreCategory;
-	@ManyToOne
-	@JoinColumn(name = "maloaicuahang")
-	private StoreCategories storeCategories;
-	
 	@OneToMany(mappedBy = "store")
 	private Set<Employees> lisEmployees;
 	

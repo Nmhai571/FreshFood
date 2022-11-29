@@ -15,22 +15,17 @@ maloaisanpham bigint auto_increment Not null primary key,
 tenloaisanpham nvarchar(255) not null
 );
 
-insert into loaisanpham(tenloaisanpham) values ("Thực Phẩm Tươi Sống");
-
 create table cuahang(
 macuahang bigint not null  primary key auto_increment,
 diachi nvarchar(255) not null,
-tencuahang nvarchar(255) not null,
-maloaicuahang int
+tencuahang nvarchar(255) not null
 );
-insert into cuahang (diachi, tencuahang, maloaicuahang) values ("ly thuong kiet", "Freshfood1", 1);
+insert into cuahang (diachi, tencuahang) values ("ly thuong kiet", "Freshfood1");
+insert into cuahang (diachi, tencuahang) values ("Cộng Hòa", "Freshfood2");
+insert into cuahang (diachi, tencuahang) values ("Võ Văn Ngân", "Freshfood3");
+insert into cuahang (diachi, tencuahang) values ("Nam Kì Khởi Nghĩa", "Freshfood4");
+insert into cuahang (diachi, tencuahang) values ("Cách Mạng Tháng 8", "Freshfood5");
 
-create table loaicuahang(
-maloaicuahang int auto_increment,
-tenloaicuahang nvarchar(200),
-primary key(maloaicuahang)
-);
-insert into loaicuahang(tenloaicuahang) values ("chi nhanh 1");
 
 create table nhanvien(
 manhanvien  bigint auto_increment not null primary key,
@@ -99,5 +94,4 @@ alter table nhanvien add constraint fk_machucvu foreign key (machucvu) reference
 alter table hoadon add constraint fk_manhanvien foreign key(manhanvien) references nhanvien(manhanvien);
 alter table nhanvien add constraint fk_macuahangnhanvien foreign key(macuahang) references cuahang(macuahang);
 alter table nhanvien add constraint fk_matrangthainhanvien foreign key(matrangthai) references trangthailamviec(matrangthai);
-alter table cuahang add constraint fk_maloaicuahang foreign key(maloaicuahang) references loaicuahang(maloaicuahang);
 
